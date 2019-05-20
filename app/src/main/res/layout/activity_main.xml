@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pace.cs639spring.hw3.MainActivity">
+
+
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="159dp"
+        android:layout_height="78dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/students_text"
+        android:layout_marginTop="145dp"
+        android:gravity="center"
+        android:text="@string/date"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="195dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/date_text" />
+
+
+    <TextView
+        android:id="@+id/students_text"
+        android:layout_width="176dp"
+        android:layout_height="74dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="204dp"
+        android:layout_toStartOf="@+id/date"
+        android:gravity="center"
+        android:text="@string/student_count"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/count"
+        android:layout_width="191dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/students_text"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp">
+
+        <Button
+            android:layout_width="146dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="onAddDataClicked"
+            android:padding="5dp"
+            android:text="@string/add_data"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/highlight_integral_checkbox"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
