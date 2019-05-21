@@ -30,10 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.pace.cs639spring.hw3.MainActivity" />
-        <activity
-            android:name="com.pace.cs639spring.hw3.Main3Activity"
-            android:alwaysRetainTaskState="true" >
-        </activity>
+        <activity android:name="com.pace.cs639spring.hw3.Main3Activity" />
 
         <meta-data
             android:name="android.support.VERSION"

@@ -11,6 +11,9 @@ import android.widget.SeekBar;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.content.Context;
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -19,8 +22,10 @@ public class Main3Activity extends AppCompatActivity {
     Button b1;
 
     Intent intent;
-    Date date;
+    Date date , date2;
+    String date1;
     int studentCount;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +35,15 @@ public class Main3Activity extends AppCompatActivity {
         mGraphView = findViewById(R.id.line_graph2);
         mSeekBar = findViewById(R.id.seek_bar);
 
+        db=openOrCreateDatabase("Attendance", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS attendance(date VARCHAR(5),count INTEGER);");
+
 
         intent = getIntent();
         SimpleDateFormat format = new SimpleDateFormat("MM/dd");
         try {
             date = format.parse(intent.getStringExtra("date"));
+            date1 = intent.getStringExtra("date");
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -45,7 +54,26 @@ public class Main3Activity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        mGraphView.addData(date.getTime(), studentCount);
+        db.execSQL("INSERT INTO attendance VALUES('"+date1+"','"+studentCount+"');");
+
+
+        Cursor c=db.rawQuery("SELECT * FROM attendance", null);
+
+        while(c.moveToNext())
+        {
+
+            SimpleDateFormat format1 = new SimpleDateFormat("MM/dd");
+            try {
+               date2 = format.parse(c.getString(0));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            mGraphView.addData(date2.getTime(), c.getInt(1));
+
+        }
+
+
 
 
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -78,6 +106,9 @@ public class Main3Activity extends AppCompatActivity {
     }
 
     public void onClearDataClicked(View v) {
+
+        db.execSQL("DELETE FROM attendance;");
+
         mGraphView.clearData();
     }
 

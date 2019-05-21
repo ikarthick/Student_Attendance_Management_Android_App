@@ -1,0 +1,13 @@
+#Tue May 21 18:55:38 IST 2019
+path.3=classes.dex
+path.2=classes.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.3=C\:\\my folder\\Student Attedance Management-20190519T130738Z-001\\Student Attedance Management\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+base.2=C\:\\my folder\\Student Attedance Management-20190519T130738Z-001\\Student Attedance Management\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+base.1=C\:\\my folder\\Student Attedance Management-20190519T130738Z-001\\Student Attedance Management\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\18
+base.0=C\:\\my folder\\Student Attedance Management-20190519T130738Z-001\\Student Attedance Management\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12

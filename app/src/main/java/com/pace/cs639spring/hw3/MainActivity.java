@@ -1,5 +1,6 @@
 package com.pace.cs639spring.hw3;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         mDateInput = findViewById(R.id.date);
         mStudentCountInput = findViewById(R.id.count);
-
 
     }
 
@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent( MainActivity.this , Main3Activity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         intent.putExtra("date",date1);
         intent.putExtra("count",count);
         startActivity(intent);

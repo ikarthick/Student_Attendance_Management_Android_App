@@ -1,0 +1,4 @@
+#Tue May 21 18:55:30 IST 2019
+base.0=C\:\\my folder\\Student Attedance Management-20190519T130738Z-001\\Student Attedance Management\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+path.0=classes.dex
+renamed.0=classes.dex
